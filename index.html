@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Mini Todo List</title>
 </head>
 <body>
-    
+    <div id="root">
+        <header>
+            <input type="text" name="pesquisar" id="pesquisar" onkeyup="pesquisarTarefa()" placeholder="pesquisar por título">
+        </header>
+        <main>
+            <section id="tarefas">
+                <h2>Tarefas <button onclick="abrirModal()">Nova tarefa</button></h2>
+                <!-- <h6>Nenhuma tarefa registrada</h6> -->
+                <ul id="lista"></ul>
+            </section>
+            <section onclick="fecharModal()" id="overlay"></section>
+            <div id="criarModal" class="modal">
+                <form action="" onsubmit="novaTarefa()">
+                    <h3>Criar tarefa <span onclick="fecharModal()" class="material-symbols-outlined">close</span></h3>
+                    <label for="titulo">Título</label>
+                    <input type="text" name="" id="titulo" required>
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" required></textarea>
+                    <button>Criar</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="./src/script.js"></script>
 </body>
 </html>
